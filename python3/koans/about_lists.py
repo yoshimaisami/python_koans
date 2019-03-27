@@ -7,6 +7,7 @@
 
 from runner.koan import *
 
+
 class AboutLists(Koan):
     def test_creating_lists(self):
         empty_list = list()
@@ -29,10 +30,11 @@ class AboutLists(Koan):
     def test_accessing_list_elements(self):
         noms = ['peanut', 'butter', 'and', 'jelly']
 
-        self.assertEqual(__, noms[0])
-        self.assertEqual(__, noms[3])
-        self.assertEqual(__, noms[-1])
-        self.assertEqual(__, noms[-3])
+        self.assertEqual('peanut', noms[0])
+        self.assertEqual('jelly', noms[3])
+        self.assertEqual('jelly', noms[-1])
+        self.assertEqual('butter', noms[-3])
+        # guessing on the negative index values/numbers
 
     def test_slicing_lists(self):
         noms = ['peanut', 'butter', 'and', 'jelly']
@@ -53,9 +55,9 @@ class AboutLists(Koan):
 
     def test_lists_and_ranges(self):
         self.assertEqual(range, type(range(5)))
-        self.assertNotEqual([1, 2, 3, 4, 5], range(1,6))
-        self.assertEqual(__, list(range(5)))
-        self.assertEqual(__, list(range(5, 9)))
+        self.assertNotEqual([1, 2, 3, 4, 5], range(1, 6))
+        self.assertEqual([0, 1, 2, 3, 4], list(range(5)))
+        self.assertEqual([5, 6, 7, 8], list(range(5, 9)))
 
     def test_ranges_with_steps(self):
         self.assertEqual(__, list(range(5, 3, -1)))
@@ -106,4 +108,3 @@ class AboutLists(Koan):
 
         # Note, popping from the left hand side of a list is
         # inefficient. Use collections.deque instead.
-
